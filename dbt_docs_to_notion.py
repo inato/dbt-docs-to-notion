@@ -207,9 +207,9 @@ def main():
                   {
                     "type": "text",
                     "text": {
-                      "content": col_name
+                      "content": col_name[:2000]
                     },
-                    "plain_text": col_name
+                    "plain_text": col_name[:2000]
                   }
                 ],
                 [
@@ -226,13 +226,13 @@ def main():
                     "type": "text",
                     "text": {
                       "content": (
-                        column_descriptions[col_name.lower()]
+                        column_descriptions[col_name.lower()][:2000]
                         if col_name.lower() in column_descriptions
                         else ''
                       )
                     },
                     "plain_text": (
-                      column_descriptions[col_name.lower()]
+                      column_descriptions[col_name.lower()][:2000]
                       if col_name.lower() in column_descriptions
                       else ''
                     )
@@ -380,7 +380,7 @@ def main():
             "title": [
               {
                 "text": {
-                  "content": data['name']
+                  "content": data['name'][:2000]
                 }
               }
             ]
