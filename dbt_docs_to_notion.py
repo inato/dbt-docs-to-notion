@@ -150,7 +150,7 @@ def main():
 
   ##### create / update database records #####
   for model_name, data in sorted(list(models.items()), reverse=True):
-    if (model_records_to_write == ['all'] or model_name in model_records_to_write) and ("dim_" in model_name or "fct_" in model_name) :
+    if (model_records_to_write == ['all'] or model_name in model_records_to_write) and ("dim_" in model_name or "fct_" in model_name) and model_name == "dim_sites_new" :
       # form record object
       column_descriptions = {name: metadata['description']
                             for name, metadata
@@ -206,7 +206,7 @@ def main():
                 [
                   {
                     "type": "text",
-                    "text": {
+                    "text": { 
                       "content": col_name[:2000]
                     },
                     "plain_text": col_name[:2000]
